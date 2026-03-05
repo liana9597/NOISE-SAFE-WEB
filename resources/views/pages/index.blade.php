@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Noise Safe - Earbud Pintar untuk Disabilitas Sensorik')
-@section('meta_description', 'Earbud noise cancelling dengan GPS real-time dan suara menenangkan untuk anak dengan disabilitas sensorik. Pantau lokasi anak dari aplikasi orang tua.')
+@section('meta_description', 'Earbud noise cancelling dengan GPS real-time dan suara menenangkan untuk anak dengan disabilitas sensorik.')
 
 @section('content')
     <!-- Hero Section -->
@@ -34,7 +34,7 @@
                             <div class="w-10 h-10 bg-blue-100 rounded-full border-2 border-white flex items-center justify-center text-blue-600 font-bold">C</div>
                         </div>
                         <p class="text-sm text-gray-500">
-                            <span class="font-bold text-blue-600">{{ $totalWaitingList ?? 0 }}+</span> orang sudah mendaftar waiting list
+                            <span class="font-bold text-blue-600">{{ $totalWaitingList ?? 0 }}+</span> orang sudah mendaftar
                         </p>
                     </div>
                 </div>
@@ -65,7 +65,7 @@
                     Tantangan yang Dihadapi
                 </h2>
                 <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-                    Setiap hari, anak dengan disabilitas sensorik berjuang melawan kebisingan yang mengganggu
+                    Setiap hari, anak dengan disabilitas sensorik berjuang melawan kebisingan
                 </p>
             </div>
             
@@ -115,49 +115,49 @@
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Card 1: Noise Cancelling -->
-                <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition border border-gray-100">
+                <!-- Card 1 -->
+                <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
                     <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
                         <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold text-blue-900 mb-2">🔇 Noise Cancelling Otomatis</h3>
-                    <p class="text-gray-600">Meredam suara bising hingga 32dB secara otomatis saat terdeteksi kebisingan berlebih.</p>
+                    <h3 class="text-xl font-semibold text-blue-900 mb-2">Noise Cancelling Otomatis</h3>
+                    <p class="text-gray-600">Meredam suara bising hingga 32dB secara otomatis</p>
                 </div>
                 
-                <!-- Card 2: Suara Menenangkan -->
-                <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition border border-gray-100">
+                <!-- Card 2 -->
+                <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
                     <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mb-4">
                         <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold text-blue-900 mb-2">🎵 Suara Menenangkan</h3>
-                    <p class="text-gray-600">Putar otomatis white noise atau suara alam saat sistem mendeteksi kepanikan.</p>
+                    <h3 class="text-xl font-semibold text-blue-900 mb-2">Suara Menenangkan</h3>
+                    <p class="text-gray-600">Putar otomatis white noise saat deteksi kepanikan</p>
                 </div>
                 
-                <!-- Card 3: Tombol Darurat -->
-                <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition border border-gray-100">
+                <!-- Card 3 -->
+                <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
                     <div class="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center mb-4">
                         <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold text-blue-900 mb-2">🆘 Tombol Darurat</h3>
-                    <p class="text-gray-600">Tekan untuk kirim notifikasi instan ke orang tua jika butuh bantuan segera.</p>
+                    <h3 class="text-xl font-semibold text-blue-900 mb-2">Tombol Darurat</h3>
+                    <p class="text-gray-600">Kirim notifikasi instan ke orang tua</p>
                 </div>
                 
-                <!-- Card 4: GPS Real-time -->
-                <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition border border-gray-100">
+                <!-- Card 4 -->
+                <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
                     <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
                         <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold text-blue-900 mb-2">📍 GPS Real-time</h3>
-                    <p class="text-gray-600">Pantau lokasi anak secara langsung dari aplikasi di HP orang tua.</p>
+                    <h3 class="text-xl font-semibold text-blue-900 mb-2">GPS Real-time</h3>
+                    <p class="text-gray-600">Pantau lokasi anak dari aplikasi orang tua</p>
                 </div>
             </div>
         </div>
@@ -176,43 +176,20 @@
             </div>
             
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Step 1 -->
-                <div class="text-center relative">
-                    <div class="bg-blue-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
-                        1
-                    </div>
-                    <h3 class="text-xl font-semibold text-blue-900 mb-3">
-                        Anak Pakai Earbud
-                    </h3>
-                    <p class="text-gray-600">
-                        Earbud nyaman dipakai seharian dengan baterai tahan 12 jam
-                    </p>
-                </div>
-                
-                <!-- Step 2 -->
-                <div class="text-center relative">
-                    <div class="bg-blue-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
-                        2
-                    </div>
-                    <h3 class="text-xl font-semibold text-blue-900 mb-3">
-                        Suara Bising Teredam
-                    </h3>
-                    <p class="text-gray-600">
-                        Noise cancelling otomatis aktif, suara menenangkan diputar jika perlu
-                    </p>
-                </div>
-                
-                <!-- Step 3 -->
                 <div class="text-center">
-                    <div class="bg-blue-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
-                        3
-                    </div>
-                    <h3 class="text-xl font-semibold text-blue-900 mb-3">
-                        Butuh Bantuan? Notifikasi!
-                    </h3>
-                    <p class="text-gray-600">
-                        Tekan tombol darurat, orang tua langsung tahu lokasi via aplikasi
-                    </p>
+                    <div class="bg-blue-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">1</div>
+                    <h3 class="text-xl font-semibold text-blue-900 mb-3">Anak Pakai Earbud</h3>
+                    <p class="text-gray-600">Earbud nyaman dipakai seharian dengan baterai tahan 12 jam</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-blue-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">2</div>
+                    <h3 class="text-xl font-semibold text-blue-900 mb-3">Suara Bising Teredam</h3>
+                    <p class="text-gray-600">Noise cancelling otomatis aktif, suara menenangkan diputar</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-blue-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">3</div>
+                    <h3 class="text-xl font-semibold text-blue-900 mb-3">Butuh Bantuan? Notifikasi!</h3>
+                    <p class="text-gray-600">Tekan tombol darurat, orang tua langsung tahu lokasi</p>
                 </div>
             </div>
         </div>
@@ -232,20 +209,18 @@
             
             <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                 <!-- Starter Package -->
-                <div class="bg-white border-2 border-gray-200 rounded-3xl p-8 hover:shadow-xl transition">
+                <div class="bg-white border-2 border-gray-200 rounded-3xl p-8">
                     <h3 class="text-2xl font-bold text-blue-900 mb-2">Starter</h3>
                     <p class="text-gray-500 mb-6">Cocok untuk mencoba fitur dasar</p>
-                    
                     <div class="mb-6">
                         <span class="text-4xl font-bold text-blue-900">Rp 1.299.000</span>
                     </div>
-                    
                     <ul class="space-y-4 mb-8">
                         <li class="flex items-center">
                             <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                             </svg>
-                            1 unit Earbud Noise Safe
+                            1 unit Earbud
                         </li>
                         <li class="flex items-center">
                             <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -260,38 +235,33 @@
                             Garansi 1 tahun
                         </li>
                     </ul>
-                    
-                    <a href="#waiting-list" 
-                       class="block text-center bg-blue-600 text-white py-4 rounded-full font-semibold hover:bg-blue-700 transition">
+                    <a href="#waiting-list" class="block text-center bg-blue-600 text-white py-4 rounded-full font-semibold hover:bg-blue-700 transition">
                         Daftar Waiting List
                     </a>
                 </div>
                 
-                <!-- Complete Package (Recommended) -->
-                <div class="bg-blue-600 text-white rounded-3xl p-8 hover:shadow-xl transition relative">
+                <!-- Complete Package -->
+                <div class="bg-blue-600 text-white rounded-3xl p-8 relative">
                     <div class="absolute top-0 right-8 bg-yellow-400 text-blue-900 px-4 py-2 rounded-b-lg font-semibold text-sm">
                         REKOMENDASI
                     </div>
-                    
                     <h3 class="text-2xl font-bold mb-2">Complete</h3>
                     <p class="text-blue-100 mb-6">Solusi lengkap untuk keamanan maksimal</p>
-                    
                     <div class="mb-6">
                         <span class="text-4xl font-bold">Rp 1.999.000</span>
                     </div>
-                    
                     <ul class="space-y-4 mb-8">
                         <li class="flex items-center">
                             <svg class="w-5 h-5 text-yellow-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                             </svg>
-                            1 unit Earbud Noise Safe
+                            1 unit Earbud
                         </li>
                         <li class="flex items-center">
                             <svg class="w-5 h-5 text-yellow-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                             </svg>
-                            Akses aplikasi SEUMUR HIDUP
+                            Akses aplikasi seumur hidup
                         </li>
                         <li class="flex items-center">
                             <svg class="w-5 h-5 text-yellow-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -303,12 +273,10 @@
                             <svg class="w-5 h-5 text-yellow-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                             </svg>
-                            FREE 1 tahun langganan suara premium
+                            Free suara premium 1 tahun
                         </li>
                     </ul>
-                    
-                    <a href="#waiting-list" 
-                       class="block text-center bg-yellow-400 text-blue-900 py-4 rounded-full font-semibold hover:bg-yellow-500 transition">
+                    <a href="#waiting-list" class="block text-center bg-yellow-400 text-blue-900 py-4 rounded-full font-semibold hover:bg-yellow-500 transition">
                         Daftar Waiting List
                     </a>
                 </div>
@@ -316,19 +284,23 @@
         </div>
     </section>
 
-    <!-- WAITING LIST SECTION (UTAMA) -->
-    <section id="waiting-list" class="py-20 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+    <!-- WAITING LIST SECTION -->
+    <section id="waiting-list" class="py-20 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
         <div class="max-w-4xl mx-auto text-center px-4">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">
-                Siap Memberikan Ketenangan untuk Buah Hati?
-            </h2>
-            <p class="text-xl mb-10 text-blue-100">
-                Dapatkan akses early access dan diskon khusus untuk pendaftar waiting list!
-            </p>
+            <div class="mb-10">
+                <span class="inline-block bg-yellow-400 text-blue-900 px-6 py-2 rounded-full text-sm font-semibold mb-4">
+                    EARLY ACCESS
+                </span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    Daftar Waiting List Sekarang
+                </h2>
+                <p class="text-xl text-blue-100">
+                    Dapatkan diskon 20% untuk batch pertama!
+                </p>
+            </div>
             
-            <!-- Tampilkan pesan sukses kalau ada -->
             @if(session('success'))
-                <div class="mb-6 bg-green-500 text-white px-6 py-4 rounded-xl flex items-center justify-center">
+                <div class="mb-8 bg-green-500 text-white px-6 py-4 rounded-2xl flex items-center justify-center">
                     <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                     </svg>
@@ -336,62 +308,64 @@
                 </div>
             @endif
             
-            <!-- Form Waiting List -->
-            <form action="{{ route('waiting-list.store') }}" method="POST" class="max-w-md mx-auto">
-                @csrf
-                
-                <div class="mb-4">
-                    <input type="text" 
-                           name="name" 
-                           placeholder="Nama Lengkap" 
-                           class="w-full px-4 py-3 rounded-full text-gray-900 @error('name') border-2 border-red-500 @enderror"
-                           value="{{ old('name') }}"
-                           required>
-                    @error('name')
-                        <p class="text-red-300 text-sm mt-1 text-left">{{ $message }}</p>
-                    @enderror
-                </div>
-                
-                <div class="mb-4">
-                    <input type="email" 
-                           name="email" 
-                           placeholder="Email" 
-                           class="w-full px-4 py-3 rounded-full text-gray-900 @error('email') border-2 border-red-500 @enderror"
-                           value="{{ old('email') }}"
-                           required>
-                    @error('email')
-                        <p class="text-red-300 text-sm mt-1 text-left">{{ $message }}</p>
-                    @enderror
-                </div>
-                
-                <div class="mb-4">
-                    <input type="tel" 
-                           name="phone" 
-                           placeholder="Nomor WhatsApp" 
-                           class="w-full px-4 py-3 rounded-full text-gray-900 @error('phone') border-2 border-red-500 @enderror"
-                           value="{{ old('phone') }}"
-                           required>
-                    @error('phone')
-                        <p class="text-red-300 text-sm mt-1 text-left">{{ $message }}</p>
-                    @enderror
-                </div>
-                
-                <div class="mb-6">
-                    <select name="package" class="w-full px-4 py-3 rounded-full text-gray-900">
-                        <option value="starter">Paket Starter - Rp 1.299.000</option>
-                        <option value="complete">Paket Complete - Rp 1.999.000 (Rekomendasi)</option>
-                    </select>
-                </div>
-                
-                <button type="submit" 
-                        class="bg-yellow-400 text-gray-900 px-10 py-4 rounded-full font-semibold hover:bg-yellow-500 transition text-xl shadow-2xl w-full">
-                    Daftar Waiting List Sekarang
-                </button>
-            </form>
-            
-            <p class="text-blue-200 mt-4 text-sm">
-                *Data Anda aman dan tidak akan disalahgunakan
-            </p>
+            <!-- Form -->
+            <div class="bg-white rounded-3xl shadow-2xl p-8 text-left">
+                <form action="{{ route('waiting-list.store') }}" method="POST">
+                    @csrf
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <!-- Nama -->
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Nama Lengkap <span class="text-red-500">*</span></label>
+                            <input type="text" name="name" value="{{ old('name') }}" placeholder="Masukkan nama lengkap" 
+                                class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 @error('name') border-red-500 @enderror"
+                                required>
+                            @error('name')<p class="text-red-500 text-sm mt-1">{{ $message }}</p>@enderror
+                        </div>
+                        
+                        <!-- Email -->
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Email <span class="text-red-500">*</span></label>
+                            <input type="email" name="email" value="{{ old('email') }}" placeholder="Masukkan email" 
+                                class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 @error('email') border-red-500 @enderror"
+                                required>
+                            @error('email')<p class="text-red-500 text-sm mt-1">{{ $message }}</p>@enderror
+                        </div>
+                        
+                        <!-- No HP -->
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">No WhatsApp <span class="text-red-500">*</span></label>
+                            <input type="tel" name="phone" value="{{ old('phone') }}" placeholder="08123456789" 
+                                class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 @error('phone') border-red-500 @enderror"
+                                required>
+                            @error('phone')<p class="text-red-500 text-sm mt-1">{{ $message }}</p>@enderror
+                        </div>
+                        
+                        <!-- Paket -->
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Pilih Paket <span class="text-red-500">*</span></label>
+                            <select name="package" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                <option value="starter">Paket Starter - Rp 1.299.000</option>
+                                <option value="complete">Paket Complete - Rp 1.999.000</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <!-- Pesan -->
+                    <div class="mt-6">
+                        <label class="block text-gray-700 font-semibold mb-2">Pesan Tambahan (opsional)</label>
+                        <textarea name="message" rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Ceritakan kebutuhan khusus buah hati Anda...">{{ old('message') }}</textarea>
+                    </div>
+                    
+                    <!-- Submit -->
+                    <div class="mt-8 text-center">
+                        <button type="submit" class="bg-yellow-400 text-gray-900 px-10 py-4 rounded-full font-semibold hover:bg-yellow-500 transition text-xl shadow-xl w-full md:w-auto">
+                            Daftar Waiting List
+                        </button>
+                        <p class="text-sm text-gray-500 mt-4">Data Anda aman dan tidak akan disalahgunakan</p>
+                    </div>
+                </form>
+            </div>
         </div>
     </section>
 
@@ -402,9 +376,7 @@
                 <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
                     Pertanyaan yang Sering Diajukan
                 </h2>
-                <p class="text-lg text-gray-600">
-                    Ada yang ingin ditanyakan? Kami siap membantu
-                </p>
+                <p class="text-lg text-gray-600">Ada yang ingin ditanyakan? Kami siap membantu</p>
             </div>
             
             <div class="space-y-4">
@@ -417,24 +389,20 @@
                         </svg>
                     </button>
                     <div class="px-6 pb-4 hidden">
-                        <p class="text-gray-600">
-                            Noise Safe dirancang khusus untuk anak-anak dan remaja (usia 5-18 tahun) dengan disabilitas sensorik. Ukuran earbud dapat disesuaikan dengan berbagai ukuran telinga.
-                        </p>
+                        <p>Noise Safe dirancang untuk anak dan remaja (5-18 tahun) dengan disabilitas sensorik.</p>
                     </div>
                 </div>
                 
                 <!-- FAQ 2 -->
                 <div class="bg-white rounded-xl shadow-sm border border-gray-200">
                     <button class="w-full px-6 py-4 text-left font-semibold text-blue-900 flex justify-between items-center" onclick="toggleFAQ(this)">
-                        <span>Bagaimana cara setting suara di earbud?</span>
+                        <span>Bagaimana cara setting suara?</span>
                         <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
                     </button>
                     <div class="px-6 pb-4 hidden">
-                        <p class="text-gray-600">
-                            Anda bisa mengatur jenis suara menenangkan (white noise, suara alam, musik instrumental) melalui aplikasi Noise Safe di smartphone.
-                        </p>
+                        <p>Setting suara melalui aplikasi Noise Safe di smartphone orang tua.</p>
                     </div>
                 </div>
                 
@@ -447,39 +415,7 @@
                         </svg>
                     </button>
                     <div class="px-6 pb-4 hidden">
-                        <p class="text-gray-600">
-                            Pengiriman untuk waiting list batch pertama akan dimulai setelah produksi selesai. Anda akan mendapatkan notifikasi via email.
-                        </p>
-                    </div>
-                </div>
-                
-                <!-- FAQ 4 -->
-                <div class="bg-white rounded-xl shadow-sm border border-gray-200">
-                    <button class="w-full px-6 py-4 text-left font-semibold text-blue-900 flex justify-between items-center" onclick="toggleFAQ(this)">
-                        <span>Garansi berapa lama?</span>
-                        <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </button>
-                    <div class="px-6 pb-4 hidden">
-                        <p class="text-gray-600">
-                            Paket Starter mendapatkan garansi 1 tahun, sedangkan Paket Complete mendapatkan garansi 2 tahun.
-                        </p>
-                    </div>
-                </div>
-                
-                <!-- FAQ 5 -->
-                <div class="bg-white rounded-xl shadow-sm border border-gray-200">
-                    <button class="w-full px-6 py-4 text-left font-semibold text-blue-900 flex justify-between items-center" onclick="toggleFAQ(this)">
-                        <span>Aplikasinya gratis atau berbayar?</span>
-                        <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </button>
-                    <div class="px-6 pb-4 hidden">
-                        <p class="text-gray-600">
-                            Aplikasi pendamping tersedia gratis. Paket Starter mendapatkan akses fitur lengkap selama 6 bulan, Paket Complete mendapatkan akses seumur hidup.
-                        </p>
+                        <p>Pengiriman batch pertama akan dimulai setelah produksi selesai. Notifikasi via email.</p>
                     </div>
                 </div>
             </div>
@@ -489,18 +425,17 @@
 
 @push('scripts')
 <script>
-    function toggleFAQ(button) {
-        const content = button.nextElementSibling;
-        const icon = button.querySelector('svg');
-        content.classList.toggle('hidden');
-        icon.classList.toggle('rotate-180');
-    }
-    
-    // Tutup mobile menu saat klik link
-    document.querySelectorAll('#mobile-menu a').forEach(link => {
-        link.addEventListener('click', () => {
-            document.getElementById('mobile-menu').classList.add('hidden');
-        });
+function toggleFAQ(button) {
+    const content = button.nextElementSibling;
+    const icon = button.querySelector('svg');
+    content.classList.toggle('hidden');
+    icon.classList.toggle('rotate-180');
+}
+
+document.querySelectorAll('#mobile-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+        document.getElementById('mobile-menu').classList.add('hidden');
     });
+});
 </script>
 @endpush
