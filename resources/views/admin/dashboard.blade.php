@@ -16,25 +16,25 @@
 <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px">
     <div class="card" style="border-top:3px solid #8DBED7">
         <div style="width:42px;height:42px;border-radius:10px;background:#e8f4fb;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:12px">🎧</div>
-        <div style="font-family:'Madimi One',sans-serif;font-size:28px;color:#2d4a5a">0</div>
+        <div style="font-family:'Madimi One',sans-serif;font-size:28px;color:#2d4a5a">{{ $totalDevices }}</div>
         <div style="font-size:12px;color:#888;margin-top:2px">Total Perangkat</div>
         <div style="font-size:11px;margin-top:8px;font-weight:600;color:#C8D96E">↑ Data dari tabel devices</div>
     </div>
     <div class="card" style="border-top:3px solid #F4A7D0">
         <div style="width:42px;height:42px;border-radius:10px;background:#fce9f3;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:12px">👥</div>
-        <div style="font-family:'Madimi One',sans-serif;font-size:28px;color:#2d4a5a">0</div>
+        <div style="font-family:'Madimi One',sans-serif;font-size:28px;color:#2d4a5a">{{ $totalParents }}</div>
         <div style="font-size:12px;color:#888;margin-top:2px">Total User</div>
         <div style="font-size:11px;margin-top:8px;font-weight:600;color:#C8D96E">↑ Data dari tabel parents</div>
     </div>
     <div class="card" style="border-top:3px solid #C8D96E">
         <div style="width:42px;height:42px;border-radius:10px;background:#f3f8e4;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:12px">💰</div>
-        <div style="font-family:'Madimi One',sans-serif;font-size:28px;color:#2d4a5a">0</div>
+        <div style="font-family:'Madimi One',sans-serif;font-size:28px;color:#2d4a5a">{{ $totalPurchase }}</div>
         <div style="font-size:12px;color:#888;margin-top:2px">Total Penjualan</div>
         <div style="font-size:11px;margin-top:8px;font-weight:600;color:#C8D96E">↑ Data dari tabel purchase</div>
     </div>
     <div class="card" style="border-top:3px solid #F4A7D0">
         <div style="width:42px;height:42px;border-radius:10px;background:#fce9f3;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:12px">🔧</div>
-        <div style="font-family:'Madimi One',sans-serif;font-size:28px;color:#2d4a5a">0</div>
+        <div style="font-family:'Madimi One',sans-serif;font-size:28px;color:#2d4a5a">{{ $totalServis }}</div>
         <div style="font-size:12px;color:#888;margin-top:2px">Servis Aktif</div>
         <div style="font-size:11px;margin-top:8px;font-weight:600;color:#F4A7D0">↓ Data dari tabel service_log</div>
     </div>

@@ -34,9 +34,19 @@ class AuthController extends Controller
 
     // Dashboard
     public function dashboard()
-    {
-        return view('admin.dashboard');
-    }
+{
+    $totalDevices  = \App\Models\Device::count();
+    $totalParents  = \DB::table('parents')->count();
+    $totalPurchase = \DB::table('purchase')->count();
+    $totalServis   = \DB::table('service_log')->where('service_status', '!=', 'done')->count();
+
+    return view('admin.dashboard', compact(
+        'totalDevices',
+        'totalParents',
+        'totalPurchase',
+        'totalServis'
+    ));
+}
 
     // Logout
     public function logout()

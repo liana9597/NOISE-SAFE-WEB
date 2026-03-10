@@ -9,12 +9,7 @@
         <h2>🎧 Manajemen Perangkat</h2>
         <p>Daftar semua perangkat Noise Safe</p>
     </div>
-    <a href="{{ route('devices.create') }}" class="btn-primary">+ Tambah Perangkat</a>
 </div>
-
-@if(session('success'))
-    <div class="alert-success">✅ {{ session('success') }}</div>
-@endif
 
 <!-- Filter -->
 <div class="card" style="margin-bottom:20px;display:flex;gap:12px;align-items:center;padding:16px 20px">
@@ -32,7 +27,7 @@
     <table id="deviceTable">
         <thead>
             <tr>
-                <th>#</th>
+                <th>No.</th>
                 <th>Serial Number</th>
                 <th>Nama Pemilik</th>
                 <th>ID User</th>
@@ -46,7 +41,7 @@
             <tr>
                 <td>{{ $i + 1 }}</td>
                 <td><strong>{{ $device->serial_number }}</strong></td>
-                <td>{{ $device->owner_name }}</td>
+                <td>{{ $parents[$device->user_id] ?? $device->owner_name }}</td>
                 <td>{{ $device->user_id }}</td>
                 <td>
                     @if($device->status == 'active')
@@ -60,7 +55,7 @@
                     <div class="action-btns">
                         <a href="{{ route('devices.show', $device->device_id) }}" class="btn-blue">Detail</a>
                         <a href="{{ route('devices.edit', $device->device_id) }}" class="btn-green">Edit</a>
-                        <form method="POST" action="{{ route('devices.destroy', $device->device_id) }}" onsubmit="return confirm('Yakin hapus perangkat ini?')">
+                        <form method="POST" action="{{ route('devices.destroy', $device->device_id) }}" onsubmit="confirmDelete(this); return false;">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn-red">Hapus</button>

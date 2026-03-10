@@ -15,82 +15,79 @@
         }
 
         /* SIDEBAR */
-        .sidebar {
-            width: 240px;
-            background: #8DBED7;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            position: fixed;
-            left: 0; top: 0;
-        }
-        .sidebar-logo {
-            padding: 28px 24px 20px;
-            border-bottom: 1px solid rgba(255,255,255,0.3);
-        }
-        .sidebar-logo h1 {
-            font-family: 'Madimi One', sans-serif;
-            font-size: 22px; color: #fff;
-        }
-        .sidebar-logo h1 span { color: #C8D96E; }
-        .sidebar-logo p {
-            font-size: 11px;
-            color: rgba(255,255,255,0.75);
-            margin-top: 2px;
-        }
-        .sidebar-menu { padding: 16px 0; flex: 1; }
-        .menu-label {
-            font-size: 10px; font-weight: 700;
-            letter-spacing: 2px; text-transform: uppercase;
-            color: rgba(255,255,255,0.55);
-            padding: 8px 24px 4px;
-        }
-        .menu-item {
-            display: flex; align-items: center; gap: 10px;
-            padding: 11px 24px;
-            color: rgba(255,255,255,0.85);
-            font-size: 13px; font-weight: 500;
-            text-decoration: none;
-            border-left: 3px solid transparent;
-            transition: all 0.2s;
-        }
-        .menu-item:hover {
-            background: rgba(255,255,255,0.2);
-            color: #fff;
-        }
-        .menu-item.active {
-            background: rgba(255,255,255,0.25);
-            color: #fff;
-            border-left: 3px solid #C8D96E;
-            font-weight: 700;
-        }
-        .menu-icon { font-size: 16px; width: 20px; text-align: center; }
-        .sidebar-footer {
-            padding: 16px 24px;
-            border-top: 1px solid rgba(255,255,255,0.3);
-        }
-        .admin-info {
-            display: flex; align-items: center;
-            gap: 10px; margin-bottom: 12px;
-        }
-        .admin-avatar {
-            width: 36px; height: 36px; border-radius: 50%;
-            background: #F4A7D0;
-            display: flex; align-items: center; justify-content: center;
-            font-family: 'Madimi One', sans-serif;
-            font-size: 16px; color: #fff;
-        }
-        .admin-name { font-size: 13px; font-weight: 600; color: #fff; }
-        .admin-role { font-size: 11px; color: rgba(255,255,255,0.65); }
-        .btn-logout {
-            width: 100%;
-            background: rgba(255,255,255,0.2);
-            border: 1.5px solid rgba(255,255,255,0.4);
-            color: #fff; border-radius: 8px; padding: 8px;
-            font-size: 13px; font-family: 'Inter', sans-serif;
-            cursor: pointer; transition: all 0.2s;
-        }
-        .btn-logout:hover { background: rgba(255,255,255,0.35); }
+        /* SIDEBAR */
+.sidebar {
+    width: 240px;
+    background: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0; top: 0;
+    box-shadow: 2px 0 12px rgba(141,190,215,0.2);
+}
+.sidebar-logo {
+    padding: 24px 24px 20px;
+    border-bottom: 1px solid #e8f4fb;
+}
+.sidebar-logo p {
+    font-size: 11px;
+    color: #888;
+    margin-top: 4px;
+}
+.sidebar-menu { padding: 16px 0; flex: 1; }
+.menu-label {
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: #aaa;
+    padding: 8px 24px 4px;
+}
+.menu-item {
+    display: flex; align-items: center; gap: 10px;
+    padding: 11px 24px;
+    color: #666;
+    font-size: 13px; font-weight: 500;
+    text-decoration: none;
+    border-left: 3px solid transparent;
+    transition: all 0.2s;
+}
+.menu-item:hover {
+    background: #f0f6fa;
+    color: #2d4a5a;
+}
+.menu-item.active {
+    background: #e8f4fb;
+    color: #2d4a5a;
+    border-left: 3px solid #8DBED7;
+    font-weight: 700;
+}
+.menu-icon { font-size: 16px; width: 20px; text-align: center; }
+.sidebar-footer {
+    padding: 16px 24px;
+    border-top: 1px solid #e8f4fb;
+}
+.admin-info {
+    display: flex; align-items: center;
+    gap: 10px; margin-bottom: 12px;
+}
+.admin-avatar {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: #F4A7D0;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Madimi One', sans-serif;
+    font-size: 16px; color: #fff;
+}
+.admin-name { font-size: 13px; font-weight: 600; color: #2d4a5a; }
+.admin-role { font-size: 11px; color: #aaa; }
+.btn-logout {
+    width: 100%;
+    background: #f0f6fa;
+    border: 1.5px solid #c5dce8;
+    color: #2d4a5a; border-radius: 8px; padding: 8px;
+    font-size: 13px; font-family: 'Inter', sans-serif;
+    cursor: pointer; transition: all 0.2s;
+}
+.btn-logout:hover { background: #e8f4fb; }
 
         /* MAIN */
         .main { margin-left: 240px; flex: 1; padding: 28px; }
@@ -236,22 +233,23 @@
     <!-- SIDEBAR -->
     <div class="sidebar">
         <div class="sidebar-logo">
-            <h1><span>N</span>oise Safe</h1>
-            <p>Admin Panel</p>
-        </div>
+    <img src="{{ asset('images/logo.png') }}" alt="Noise Safe" 
+         style="width:160px;display:block;">
+    <p style="font-size:11px;color:#888;margin-top:4px">Admin Panel</p>
+</div>
         <div class="sidebar-menu">
             <div class="menu-label">Menu</div>
             <a href="{{ route('dashboard') }}"
                class="menu-item {{ request()->routeIs('dashboard') ? 'active' : '' }}">
                 <span class="menu-icon">🏠</span> Dashboard
             </a>
-            <a href="{{ route('devices.index') }}"
-               class="menu-item {{ request()->routeIs('devices.*') ? 'active' : '' }}">
-                <span class="menu-icon">🎧</span> Manajemen Perangkat
-            </a>
             <a href="{{ route('purchases.index') }}"
                class="menu-item {{ request()->routeIs('purchases.*') ? 'active' : '' }}">
                 <span class="menu-icon">💰</span> Riwayat Penjualan
+            </a>
+            <a href="{{ route('devices.index') }}"
+               class="menu-item {{ request()->routeIs('devices.*') ? 'active' : '' }}">
+                <span class="menu-icon">🎧</span> Manajemen Perangkat
             </a>
             <a href="{{ route('service_logs.index') }}"
                class="menu-item {{ request()->routeIs('service_logs.*') ? 'active' : '' }}">
@@ -277,6 +275,65 @@
     <div class="main">
         @yield('content')
     </div>
+
+    <!-- POPUP NOTIFICATION -->
+<div id="popup-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.3);z-index:999;align-items:center;justify-content:center">
+    <div id="popup-box" style="background:#fff;border-radius:16px;padding:32px;max-width:380px;width:90%;text-align:center;box-shadow:0 10px 40px rgba(0,0,0,0.15)">
+        <div id="popup-icon" style="font-size:48px;margin-bottom:12px"></div>
+        <div id="popup-title" style="font-family:'Madimi One',sans-serif;font-size:18px;color:#2d4a5a;margin-bottom:8px"></div>
+        <div id="popup-message" style="font-size:13px;color:#888;margin-bottom:20px"></div>
+        <button onclick="closePopup()" style="background:#8DBED7;color:#fff;border:none;border-radius:10px;padding:10px 28px;font-size:13px;font-weight:600;font-family:'Inter',sans-serif;cursor:pointer">OK</button>
+    </div>
+</div>
+
+<!-- POPUP KONFIRMASI HAPUS -->
+<div id="confirm-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.3);z-index:999;align-items:center;justify-content:center">
+    <div style="background:#fff;border-radius:16px;padding:32px;max-width:380px;width:90%;text-align:center;box-shadow:0 10px 40px rgba(0,0,0,0.15)">
+        <div style="font-size:48px;margin-bottom:12px">🗑️</div>
+        <div style="font-family:'Madimi One',sans-serif;font-size:18px;color:#2d4a5a;margin-bottom:8px">Yakin mau hapus?</div>
+        <div style="font-size:13px;color:#888;margin-bottom:20px">Data yang dihapus tidak bisa dikembalikan!</div>
+        <div style="display:flex;gap:10px;justify-content:center">
+            <button onclick="closeConfirm()" style="background:#ddd;color:#666;border:none;border-radius:10px;padding:10px 24px;font-size:13px;font-weight:600;font-family:'Inter',sans-serif;cursor:pointer">Batal</button>
+            <button id="confirm-btn" style="background:#F4A7D0;color:#fff;border:none;border-radius:10px;padding:10px 24px;font-size:13px;font-weight:600;font-family:'Inter',sans-serif;cursor:pointer">Hapus</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Show popup notifikasi
+    function showPopup(icon, title, message) {
+        document.getElementById('popup-icon').innerText = icon;
+        document.getElementById('popup-title').innerText = title;
+        document.getElementById('popup-message').innerText = message;
+        const overlay = document.getElementById('popup-overlay');
+        overlay.style.display = 'flex';
+    }
+    function closePopup() {
+        document.getElementById('popup-overlay').style.display = 'none';
+    }
+
+    // Konfirmasi hapus
+    let deleteForm = null;
+    function confirmDelete(form) {
+        deleteForm = form;
+        document.getElementById('confirm-overlay').style.display = 'flex';
+    }
+    function closeConfirm() {
+        document.getElementById('confirm-overlay').style.display = 'none';
+        deleteForm = null;
+    }
+    document.getElementById('confirm-btn').addEventListener('click', function() {
+        if (deleteForm) deleteForm.submit();
+    });
+
+    // Auto show popup dari session
+    @if(session('success'))
+        showPopup('✅', 'Berhasil!', '{{ session('success') }}');
+    @endif
+    @if(session('error'))
+        showPopup('❌', 'Gagal!', '{{ session('error') }}');
+    @endif
+</script>
 
 </body>
 </html>
