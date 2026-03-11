@@ -4,17 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Admin;
+use App\Models\Device;
 use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
-    // Tampilkan halaman login
     public function showLogin()
     {
         return view('admin.login');
     }
 
-    // Proses login
     public function login(Request $request)
     {
         $request->validate([
@@ -32,23 +31,39 @@ class AuthController extends Controller
         return back()->with('error', 'Nama atau password salah!');
     }
 
-    // Dashboard
     public function dashboard()
-{
-    $totalDevices  = \App\Models\Device::count();
-    $totalParents  = \DB::table('parents')->count();
-    $totalPurchase = \DB::table('purchase')->count();
-    $totalServis   = \DB::table('service_log')->where('service_status', '!=', 'done')->count();
+    {
+        $totalDevices  = Device::count();
+        $totalParents  = \DB::table('parents')->count();
+        $totalPurchase = \DB::table('purchase')->count();
+        $totalServis   = \DB::table('service_log')->where('service_status', '!=', 'done')->count();
 
-    return view('admin.dashboard', compact(
-        'totalDevices',
-        'totalParents',
-        'totalPurchase',
-        'totalServis'
-    ));
-}
+        $parents = \DB::table('parents')->pluck('name', 'user_id');
+        $devices = Device::all()->keyBy('device_id');
 
-    // Logout
+        $latestDevices = Device::where('registered_at', '>=', now()->subDays(1))
+            ->orderBy('device_id', 'desc')
+            ->take(5)
+            ->get();
+
+        $latestPurchases = \DB::table('purchase')
+            ->where('created_at', '>=', now()->subDays(1))
+            ->orderBy('purchase_id', 'desc')
+            ->take(5)
+            ->get();
+
+        return view('admin.dashboard', compact(
+            'totalDevices',
+            'totalParents',
+            'totalPurchase',
+            'totalServis',
+            'parents',
+            'devices',
+            'latestDevices',
+            'latestPurchases'
+        ));
+    }
+
     public function logout()
     {
         session()->forget('admin');

@@ -64,14 +64,12 @@
 
 </div>
 
-<div class="card" style="display:flex;gap:12px;align-items:center">
-    <a href="{{ route('devices.edit', $device->device_id) }}" class="btn-primary">✏️ Edit Perangkat</a>
+<!-- <div class="card" style="display:flex;gap:12px;align-items:center">
     <form method="POST" action="{{ route('devices.destroy', $device->device_id) }}" onsubmit="confirmDelete(this); return false;">
         @csrf
         @method('DELETE')
-        <button type="submit" class="btn-primary" style="background:#F4A7D0">🗑️ Hapus Perangkat</button>
+        <button type="submit" class="btn-primary" style="background:#F4A7D0">🗑️ Hapus Perangkat</button> 
     </form>
-    <a href="{{ route('devices.index') }}" class="btn-primary" style="background:#ddd;color:#666">Kembali ke Daftar</a>
-</div>
+</div>-->
 
 @endsection

@@ -24,12 +24,11 @@ class PurchaseController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'user_id'            => 'required|integer',
-            'serial_number'      => 'required|unique:devices,serial_number',
-            'transaction_date'   => 'required|date',
-            'transaction_status' => 'required|in:pending,paid,cancelled',
-            'garansi'            => 'required|integer',
-        ]);
+    'user_id'          => 'required|integer',
+    'serial_number'    => 'required|unique:devices,serial_number',
+    'transaction_date' => 'required|date',
+    'garansi'          => 'required|integer',
+]);
 
         $parent = \DB::table('parents')->where('user_id', $request->user_id)->first();
 
@@ -46,12 +45,12 @@ class PurchaseController extends Controller
 
         // Baru buat purchase
         Purchase::create([
-            'device_id'          => $device->device_id,
-            'user_id'            => $request->user_id,
-            'transaction_date'   => $request->transaction_date,
-            'transaction_status' => $request->transaction_status,
-            'created_at'         => now(),
-        ]);
+    'device_id'          => $device->device_id,
+    'user_id'            => $request->user_id,
+    'transaction_date'   => $request->transaction_date,
+    'transaction_status' => 'pending',
+    'created_at'         => now(),
+]);
 
         return redirect()->route('purchases.index')
             ->with('success', 'Transaksi & perangkat berhasil ditambahkan!');

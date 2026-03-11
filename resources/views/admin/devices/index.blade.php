@@ -52,16 +52,10 @@
                 </td>
                 <td>{{ $device->registered_at }}</td>
                 <td>
-                    <div class="action-btns">
-                        <a href="{{ route('devices.show', $device->device_id) }}" class="btn-blue">Detail</a>
-                        <a href="{{ route('devices.edit', $device->device_id) }}" class="btn-green">Edit</a>
-                        <form method="POST" action="{{ route('devices.destroy', $device->device_id) }}" onsubmit="confirmDelete(this); return false;">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn-red">Hapus</button>
-                        </form>
-                    </div>
-                </td>
+    <div class="action-btns">
+        <a href="{{ route('devices.show', $device->device_id) }}" class="btn-blue">Detail</a>
+    </div>
+</td>
             </tr>
             @empty
             <tr>

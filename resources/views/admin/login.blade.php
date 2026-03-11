@@ -66,20 +66,7 @@
             position: relative;
             z-index: 1;
         }
-        .dots {
-            display: flex;
-            gap: 8px;
-            margin-top: 24px;
-            position: relative;
-            z-index: 1;
-        }
-        .dot {
-            width: 8px; height: 8px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.4);
-        }
-        .dot.active { background: #C8D96E; width: 24px; border-radius: 4px; }
-
+        
         /* KANAN - form */
         .right-panel {
             flex: 1;
@@ -177,13 +164,9 @@
     <!-- KIRI -->
     <div class="left-panel">
         <img src="{{ asset('images/logo-full.png') }}" alt="Noise Safe">
-        <h2>Noise Safe Admin</h2>
+        <h2>Admin</h2>
         <p>Kelola perangkat, penjualan,<br>dan garansi dengan mudah</p>
-        <div class="dots">
-            <div class="dot active"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-        </div>
+        
     </div>
 
     <!-- KANAN -->

@@ -59,15 +59,6 @@
             </div>
         </div>
 
-        <div class="form-group">
-            <label>📋 Status Transaksi <span style="color:#F4A7D0">*</span></label>
-            <select name="transaction_status" required>
-                <option value="">-- Pilih Status --</option>
-                <option value="pending" {{ old('transaction_status') == 'pending' ? 'selected' : '' }}>⏳ Pending</option>
-                <option value="paid" {{ old('transaction_status') == 'paid' ? 'selected' : '' }}>✅ Paid</option>
-                <option value="cancelled" {{ old('transaction_status') == 'cancelled' ? 'selected' : '' }}>❌ Cancelled</option>
-            </select>
-        </div>
 
         <div style="display:flex;gap:12px;margin-top:8px">
             <button type="submit" class="btn-primary">💾 Simpan Transaksi</button>

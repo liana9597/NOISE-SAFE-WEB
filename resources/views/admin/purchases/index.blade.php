@@ -54,16 +54,10 @@
                     @endif
                 </td>
                 <td>
-                    <div class="action-btns">
-                        <a href="{{ route('purchases.show', $purchase->purchase_id) }}" class="btn-blue">Detail</a>
-                        <a href="{{ route('purchases.edit', $purchase->purchase_id) }}" class="btn-green">Edit</a>
-                        <form method="POST" action="{{ route('purchases.destroy', $purchase->purchase_id) }}" onsubmit="confirmDelete(this); return false;">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn-red">Hapus</button>
-                        </form>
-                    </div>
-                </td>
+    <div class="action-btns">
+        <a href="{{ route('purchases.show', $purchase->purchase_id) }}" class="btn-blue">Detail</a>
+    </div>
+</td>
             </tr>
             @empty
             <tr>

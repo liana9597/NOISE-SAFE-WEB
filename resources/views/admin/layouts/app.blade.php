@@ -148,7 +148,8 @@
         .badge-pending { background: #fff8e1; color: #e08000; }
         .badge-open { background: #fce4ec; color: #c0507a; }
         .badge-in_progress { background: #fff8e1; color: #e08000; }
-        .badge-done { background: #e8f5e1; color: #6a9a2a; }
+        .badge-done { background: #e8f5e9; color: #2e7d32; }
+        .badge-progress { background: #fff8e1; color: #f57f17; }
 
         /* BUTTONS */
         .btn-primary {

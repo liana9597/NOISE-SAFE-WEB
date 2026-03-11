@@ -40,67 +40,83 @@
     </div>
 </div>
 
-<!-- Menu Cards -->
-<p style="font-family:'Madimi One',sans-serif;font-size:16px;color:#2d4a5a;margin-bottom:14px">Menu Utama</p>
-<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:24px">
-    <a href="{{ route('devices.index') }}" style="background:#fff;border-radius:14px;padding:22px;box-shadow:0 2px 8px rgba(0,0,0,0.06);border-top:4px solid #8DBED7;text-decoration:none;display:block;transition:all 0.2s">
-        <div style="font-size:28px;margin-bottom:12px">🎧</div>
-        <div style="font-family:'Madimi One',sans-serif;font-size:15px;color:#2d4a5a;margin-bottom:6px">Manajemen Perangkat</div>
-        <div style="font-size:12px;color:#888;line-height:1.5">Lihat semua device, status aktif/tidak aktif, dan detail per user aplikasi</div>
-        <div style="margin-top:14px;font-size:12px;font-weight:700;color:#8DBED7">Buka Menu →</div>
-    </a>
-    <a href="{{ route('purchases.index') }}" style="background:#fff;border-radius:14px;padding:22px;box-shadow:0 2px 8px rgba(0,0,0,0.06);border-top:4px solid #F4A7D0;text-decoration:none;display:block;transition:all 0.2s">
-        <div style="font-size:28px;margin-bottom:12px">💰</div>
-        <div style="font-family:'Madimi One',sans-serif;font-size:15px;color:#2d4a5a;margin-bottom:6px">Riwayat Penjualan</div>
-        <div style="font-size:12px;color:#888;line-height:1.5">Rekap total penjualan, riwayat transaksi, dan data pembeli</div>
-        <div style="margin-top:14px;font-size:12px;font-weight:700;color:#F4A7D0">Buka Menu →</div>
-    </a>
-    <a href="{{ route('service_logs.index') }}" style="background:#fff;border-radius:14px;padding:22px;box-shadow:0 2px 8px rgba(0,0,0,0.06);border-top:4px solid #C8D96E;text-decoration:none;display:block;transition:all 0.2s">
-        <div style="font-size:28px;margin-bottom:12px">🔧</div>
-        <div style="font-family:'Madimi One',sans-serif;font-size:15px;color:#2d4a5a;margin-bottom:6px">Garansi & Catatan</div>
-        <div style="font-size:12px;color:#888;line-height:1.5">Log servis, catatan garansi per perangkat, dan update status servis</div>
-        <div style="margin-top:14px;font-size:12px;font-weight:700;color:#C8D96E">Buka Menu →</div>
-    </a>
-</div>
-
 <!-- Recent Data -->
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+
+    <!-- Perangkat Terbaru -->
     <div class="card">
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
             <div style="font-family:'Madimi One',sans-serif;font-size:14px;color:#2d4a5a">🎧 Perangkat Terbaru</div>
             <a href="{{ route('devices.index') }}" style="font-size:12px;color:#8DBED7;font-weight:600;text-decoration:none">Lihat Semua</a>
         </div>
         <table>
-            <tr>
-                <th>Serial</th>
-                <th>User</th>
-                <th>Status</th>
-            </tr>
-            <tr>
-                <td colspan="3" style="text-align:center;color:#bbb;padding:20px">
-                    Belum ada data
-                </td>
-            </tr>
+            <thead>
+                <tr>
+                    <th>Serial</th>
+                    <th>User</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @forelse($latestDevices as $device)
+                <tr>
+                    <td><strong>{{ $device->serial_number }}</strong></td>
+                    <td>{{ $parents[$device->user_id] ?? '-' }}</td>
+                    <td>
+                        @if($device->status == 'active')
+                            <span class="badge badge-paid">✅ Aktif</span>
+                        @else
+                            <span class="badge badge-inactive">❌ Tidak Aktif</span>
+                        @endif
+                    </td>
+                </tr>
+                @empty
+                <tr>
+                    <td colspan="3" style="text-align:center;color:#bbb;padding:20px">Belum ada data</td>
+                </tr>
+                @endforelse
+            </tbody>
         </table>
     </div>
+
+    <!-- Transaksi Terbaru -->
     <div class="card">
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
             <div style="font-family:'Madimi One',sans-serif;font-size:14px;color:#2d4a5a">💰 Transaksi Terbaru</div>
             <a href="{{ route('purchases.index') }}" style="font-size:12px;color:#8DBED7;font-weight:600;text-decoration:none">Lihat Semua</a>
         </div>
         <table>
-            <tr>
-                <th>Invoice</th>
-                <th>Pembeli</th>
-                <th>Status</th>
-            </tr>
-            <tr>
-                <td colspan="3" style="text-align:center;color:#bbb;padding:20px">
-                    Belum ada data
-                </td>
-            </tr>
+            <thead>
+                <tr>
+                    <th>Invoice</th>
+                    <th>Pembeli</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @forelse($latestPurchases as $purchase)
+                <tr>
+                    <td><strong>#{{ $purchase->purchase_id }}</strong></td>
+                    <td>{{ $parents[$purchase->user_id] ?? '-' }}</td>
+                    <td>
+                        @if($purchase->transaction_status == 'paid')
+                            <span class="badge badge-paid">✅ Paid</span>
+                        @elseif($purchase->transaction_status == 'pending')
+                            <span class="badge badge-pending">⏳ Pending</span>
+                        @else
+                            <span class="badge badge-inactive">❌ Cancelled</span>
+                        @endif
+                    </td>
+                </tr>
+                @empty
+                <tr>
+                    <td colspan="3" style="text-align:center;color:#bbb;padding:20px">Belum ada data</td>
+                </tr>
+                @endforelse
+            </tbody>
         </table>
     </div>
+
 </div>
 
 @endsection
