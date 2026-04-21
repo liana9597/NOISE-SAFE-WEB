@@ -96,4 +96,16 @@ class PurchaseController extends Controller
         return redirect()->route('purchases.index')
             ->with('success', 'Transaksi berhasil dihapus!');
     }
+
+    public function markAsPaid($id)
+{
+    $purchase = Purchase::findOrFail($id);
+
+    $purchase->update([
+        'transaction_status' => 'paid'
+    ]);
+
+    return redirect()->route('purchases.index')
+        ->with('success', 'Transaksi berhasil ditandai lunas!');
+}
 }

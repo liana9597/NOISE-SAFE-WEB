@@ -56,6 +56,13 @@
                 <td>
     <div class="action-btns">
         <a href="{{ route('purchases.show', $purchase->purchase_id) }}" class="btn-blue">Detail</a>
+        @if($purchase->transaction_status == 'pending')
+        <form method="POST" action="{{ route('purchases.pay', $purchase->purchase_id) }}" style="display:inline">
+            @csrf
+            @method('PUT')
+            <button type="submit" class="btn-green">✅ Lunas</button>
+        </form>
+        @endif
     </div>
 </td>
             </tr>

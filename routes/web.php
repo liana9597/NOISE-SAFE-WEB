@@ -23,3 +23,5 @@ Route::resource('parents', ParentsController::class);
 Route::resource('devices', DeviceController::class);
 Route::resource('purchases', PurchaseController::class);
 Route::resource('service_logs', ServiceLogController::class);
+
+Route::put('purchases/{id}/pay', [App\Http\Controllers\Admin\PurchaseController::class, 'markAsPaid'])->name('purchases.pay');
