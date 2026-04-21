@@ -38,7 +38,7 @@ class PurchaseController extends Controller
             'owner_name'    => $parent ? $parent->name : '-',
             'serial_number' => $request->serial_number,
             'status'        => 'active',
-            'purchase_date' => strtotime($request->transaction_date),
+            'purchase_date' => $request->transaction_date,
             'garansi'       => $request->garansi,
             'registered_at' => now(),
         ]);
