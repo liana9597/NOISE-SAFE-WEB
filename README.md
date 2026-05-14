@@ -67,11 +67,9 @@ The system includes a login feature with CAPTCHA support to improve admin login 
 # Technologies Used
 
 * Laravel
-* PHP
 * MySQL
-* Blade Template
-* Bootstrap
 * JavaScript
+* CSS
 
 ---
 
@@ -122,8 +120,4 @@ Current progress:
 * Multi-team collaborative project
 * Real-time system integration concept
 
----
 
-# Developer
-
-Developed by Liana Syifa Fauzia and team.
