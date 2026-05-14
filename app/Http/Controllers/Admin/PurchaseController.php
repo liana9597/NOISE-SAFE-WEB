@@ -16,45 +16,43 @@ class PurchaseController extends Controller
     }
 
     public function create()
-    {
-        $parents = \DB::table('parents')->get();
-        return view('admin.purchases.create', compact('parents'));
-    }
+{
+    $parents = \DB::table('parents')->get();
+    $devices = Device::all(); // ✅ tambah ini
+    return view('admin.purchases.create', compact('parents', 'devices'));
+}
 
     public function store(Request $request)
-    {
-        $request->validate([
-    'user_id'          => 'required|integer',
-    'serial_number'    => 'required|unique:devices,serial_number',
-    'transaction_date' => 'required|date',
-    'garansi'          => 'required|integer',
-]);
+{
+    $request->validate([
+        'user_id'          => 'required|integer',
+        'serial_number'    => 'required|exists:devices,serial_number', // ✅ ganti unique → exists
+        'transaction_date' => 'required|date',
+        'garansi'          => 'required|integer',
+    ]);
 
-        $parent = \DB::table('parents')->where('user_id', $request->user_id)->first();
+    // Ambil device yang sudah ada, jangan buat baru
+    $device = Device::where('serial_number', $request->serial_number)->first();
 
-        // Buat device dulu
-        $device = Device::create([
-            'user_id'       => $request->user_id,
-            'owner_name'    => $parent ? $parent->name : '-',
-            'serial_number' => $request->serial_number,
-            'status'        => 'active',
-            'purchase_date' => $request->transaction_date,
-            'garansi'       => $request->garansi,
-            'registered_at' => now(),
-        ]);
+    // Update garansi & purchase_date saja
+    $device->update([
+        'purchase_date' => $request->transaction_date,
+        'garansi'       => $request->garansi,
+        'status'        => 'active',
+    ]);
 
-        // Baru buat purchase
-        Purchase::create([
-    'device_id'          => $device->device_id,
-    'user_id'            => $request->user_id,
-    'transaction_date'   => $request->transaction_date,
-    'transaction_status' => 'pending',
-    'created_at'         => now(),
-]);
+    // Buat purchase
+    Purchase::create([
+        'device_id'          => $device->device_id,
+        'user_id'            => $request->user_id,
+        'transaction_date'   => $request->transaction_date,
+        'transaction_status' => 'pending',
+        'created_at'         => now(),
+    ]);
 
-        return redirect()->route('purchases.index')
-            ->with('success', 'Transaksi & perangkat berhasil ditambahkan!');
-    }
+    return redirect()->route('purchases.index')
+        ->with('success', 'Transaksi berhasil ditambahkan!');
+}
 
     public function show($id)
     {

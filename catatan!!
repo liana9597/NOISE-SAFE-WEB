@@ -1,0 +1,45 @@
+Viewed esp32.ino:1-520
+Searched for "lat"
+Viewed send.php:1-84
+Viewed iot_monitoring.sql:1-91
+Edited esp32.ino
+Edited esp32.ino
+Viewed send.php:1-84
+Edited send.php
+
+Halo! Aku sudah bantu menyelesaikan semua tugas dari dosen kamu. Karena modul GPS yang lama (seperti Ublox) sudah diganti dengan **SIM800L**, kita bisa menggunakan fitur **LBS (Location Based Service) / GPRS** bawaan dari SIM800L untuk melacak lokasi tanpa butuh modul GPS tambahan lagi.
+
+Berikut adalah rincian pengerjaannya sesuai dengan instruksi dosen kamu:
+
+**1. Ubah GPS ke GPRS di `esp32.ino`**
+Aku sudah menghapus library `TinyGPS++.h` dan semua konfigurasi pembacaan GPS dari kode utama. Sebagai gantinya, aku menambahkan fungsi `getRawGPRSLocation()` yang akan meminta lokasi GPRS dari SIM800L (lewat *AT Command* `AT+CIPGSMLOC=1,1`) saat terjadi deteksi bising atau tombol darurat ditekan. Data lokasi ini akan langsung dikirimkan ke backend.
+
+**2. Wiring Diagram dalam bentuk komentar**
+Wiring diagram di dalam `esp32.ino` sudah aku sesuaikan. Modul GPS yang lama sudah aku hapus dari daftar komentar dan aku pertegas bahwa **SIM800L** sekarang menjadi pengganti modul GPS sekaligus GSM/GPRS. (Pin koneksi ke ESP32 masih sama seperti sebelumnya).
+
+**5. Backend diubah buat convert ke bentuk latitude dan longitude ke database**
+File `send.php` di backend juga sudah aku modifikasi. Jika sebelumnya ESP32 mengirim `lat` dan `lng` secara terpisah, sekarang ESP32 akan mengirim data mentah dari SIM800L lewat parameter `gprs_loc` (misal: `0,106.8456,-6.2088,2023/10/10,12:00:00`). Backend PHP akan memotong teks tersebut untuk memisahkan **Longitude** dan **Latitude**, lalu secara otomatis menyimpannya ke *database* di tabel `device_location` sesuai format aslinya (Float).
+
+---
+
+### Langkah Selanjutnya untuk Kamu (Instruksi 3 & 4)
+
+Karena kodingannya sudah aku kerjakan, sekarang giliran kamu untuk mengunggahnya ke alatnya:
+
+**3. Verify di Arduino IDE dan upload seperti biasa pakai kabel**
+1. Buka file `esp32.ino` kamu melalui aplikasi **Arduino IDE**.
+2. Pastikan kamu sudah memilih Board **ESP32 Dev Module** (atau disesuaikan dengan seri ESP32 milikmu) dan Port kabel USB yang terhubung di menu **Tools**.
+3. Klik tombol **Verify** (ikon Centang) di pojok kiri atas untuk memastikan tidak ada pesan error.
+4. Jika aman, klik tombol **Upload** (ikon Panah ke kanan) dan tunggu sampai muncul tulisan *Done uploading*.
+
+**4. Cek di monitor Arduino IDE jalan apa ngga sensor nya**
+1. Setelah berhasil upload, buka **Serial Monitor** (Ikon kaca pembesar di pojok kanan atas Arduino IDE).
+2. Set baud rate di pojok kanan bawah Serial Monitor menjadi **115200**.
+3. Perhatikan log yang muncul. Coba hasilkan suara yang cukup keras ke dekat sensor suara atau tekan Push Button.
+4. Kamu seharusnya akan melihat log seperti:
+   - `>> AT+CIPGSMLOC=1,1`
+   - `<< +CIPGSMLOC: 0,106.xxxx,-6.xxxx...` (Ini artinya data lokasi GPRS berhasil didapat)
+   - `Sending: http://10.61.5.30/NOISE-SAFE-WEB/...`
+5. Coba cek *database* (phpMyAdmin) di tabel `device_location` untuk melihat apakah koordinat sudah masuk!
+
+Silakan diuji coba dulu pada perangkat kerasnya ya. Kalau masih ada kendala (misal SIM800L tidak mendapatkan sinyal atau Serial Monitor tidak menampilkan log dengan benar), beri tahu aku! 😊

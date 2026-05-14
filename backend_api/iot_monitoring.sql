@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS `noise_safe`;
-USE `noise_safe`;
+CREATE DATABASE IF NOT EXISTS `noise_safe_2`;
+USE `noise_safe_2`;
 
 CREATE TABLE `parents` (
   `user_id` bigint(20) NOT NULL AUTO_INCREMENT,

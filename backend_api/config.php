@@ -3,7 +3,7 @@
 $host = "localhost";
 $user = "root";
 $pass = "";
-$db   = "noise_safe";
+$db   = "noise_safe_2";
 
 $conn = mysqli_connect($host, $user, $pass, $db);
 

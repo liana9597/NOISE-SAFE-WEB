@@ -27,24 +27,26 @@
     <form method="POST" action="{{ route('purchases.store') }}">
         @csrf
 
-        <div class="form-group">
-            <label>👤 User / Pembeli <span style="color:#F4A7D0">*</span></label>
-            <select name="user_id" required>
-                <option value="">-- Pilih User --</option>
-                @foreach($parents as $parent)
-                    <option value="{{ $parent->user_id }}" {{ old('user_id') == $parent->user_id ? 'selected' : '' }}>
-                        {{ $parent->name }} — {{ $parent->email }}
-                    </option>
-                @endforeach
-            </select>
-        </div>
+<div class="form-group">
+    <label>👤 User / Pembeli <span style="color:#F4A7D0">*</span></label>
+    <select name="user_id" id="userSelect" required onchange="fillSerial()">
+        <option value="">-- Pilih User --</option>
+        @foreach($parents as $parent)
+            <option value="{{ $parent->user_id }}" 
+                data-serial="{{ $devices->where('user_id', $parent->user_id)->first()->serial_number ?? '' }}">
+                {{ $parent->name }} — {{ $parent->email }}
+            </option>
+        @endforeach
+    </select>
+</div>
 
-        <div class="form-group">
-            <label>🎧 Serial Number Perangkat <span style="color:#F4A7D0">*</span></label>
-            <input type="text" name="serial_number" value="{{ old('serial_number') }}"
-                placeholder="Contoh: NS-2026-00001" required>
-            <small style="color:#aaa;font-size:11px">Device akan otomatis terdaftar di Manajemen Perangkat</small>
-        </div>
+<div class="form-group">
+    <label>🎧 Serial Number Perangkat <span style="color:#F4A7D0">*</span></label>
+    <input type="text" name="serial_number" id="serialInput"
+        placeholder="Otomatis terisi saat pilih user" readonly
+        style="background:#f5f5f5;cursor:not-allowed">
+    <small style="color:#aaa;font-size:11px">Otomatis terisi sesuai device milik user</small>
+</div>
 
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
             <div class="form-group">
@@ -66,5 +68,14 @@
         </div>
     </form>
 </div>
+
+<script>
+function fillSerial() {
+    const select = document.getElementById('userSelect');
+    const selected = select.options[select.selectedIndex];
+    const serial = selected.getAttribute('data-serial');
+    document.getElementById('serialInput').value = serial ?? '';
+}
+</script>
 
 @endsection

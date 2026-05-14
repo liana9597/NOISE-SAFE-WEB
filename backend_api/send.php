@@ -6,9 +6,20 @@ $device_id = $_GET['device_id'] ?? null;
 $user_id = $_GET['user_id'] ?? null;
 $lat = $_GET['lat'] ?? null;
 $lng = $_GET['lng'] ?? null;
+$gprs_loc = $_GET['gprs_loc'] ?? null;
 $decibel_level = $_GET['noise'] ?? null;
 $noise_status = $_GET['level'] ?? ($_GET['status'] ?? null);
 $message = $_GET['message'] ?? null;
+
+// Convert GPRS LBS string to lat & lng
+// Format from SIM800L: 0,106.8456,-6.2088,2023/10/10,12:00:00 (code, longitude, latitude, date, time)
+if ($gprs_loc !== null) {
+    $parts = explode(",", $gprs_loc);
+    if (count($parts) >= 3 && trim($parts[0]) == '0') {
+        $lng = trim($parts[1]);
+        $lat = trim($parts[2]);
+    }
+}
 
 // Validasi device_id karena menjadi FK untuk tabel-tabel baru
 if (!$device_id) {
