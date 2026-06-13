@@ -1,123 +1,102 @@
-# Noise Safe Admin Panel
+# 🌐 Language Options:
+**English** | [Bahasa Indonesia](README-id.md)
 
-Laravel-based admin dashboard developed for managing IoT hearing-assist devices, monitoring device activity, and handling warranty service records.
+---
+
+# Noise Safe Admin Panel (IoT Control Panel)
+
+A data-rich administrative dashboard built on top of the **Laravel Framework**, custom-engineered to manage smart hearing-assist hardware (Smart Earbuds), monitor live device telemetry, and track customer warranty and service cycles.
 
 # Overview
 
-Noise Safe is an IoT-based project designed to help people who are sensitive to excessive sound through smart earbud devices.
+Noise Safe is an award-winning, integrated IoT innovation designed to support individuals suffering from hyperacusis (extreme hypersensitivity to environmental noise) using intelligent noise-filtering earbuds.
 
-This project consists of three main parts:
+The overall Noise Safe infrastructure operates across 3 foundational tech pillars:
+* **IoT Hardware Subsystem:** (Embedded sensors and microcontrollers on the physical earbuds).
+* **Companion Mobile Application:** For personal consumer acoustics tuning.
+* **Web-Based Admin Panel:** The central business and hardware management engine.
 
-* IoT Device System
-* Mobile Application
-* Web Admin Panel
+This repository hosts the source code for the **Web-Based Admin Panel**.
 
-This repository focuses specifically on the development of the web-based admin panel.
-
-The admin panel was developed using Laravel to help administrators manage device activity, customer purchase history, and warranty service tracking.
-
-Currently, the web system has been integrated with the IoT module, while mobile application integration is still under development.
+The system acts as an enterprise control center enabling administrators to monitor active earbud deployments in the field, track customer purchase logs, and catalog hardware maintenance records. Currently, the web system is fully integrated with the physical IoT hardware modules via active data routing.
 
 ---
 
 # Main Features
 
-## Device Management
+## 🔌 IoT Device Management & Live Telemetry
+Tracks registered smart earbuds connected to the IoT ecosystem with automated operational abilities to:
+* Aggregate and display a comprehensive registry of all deployed earbud units.
+* Monitor live network connectivity states (*Active / Inactive*).
+* Run early anomaly detection against hardware statuses.
+* Deliver instant telemetry updates on the dashboard driven by packet transmissions from physical IoT hardware modules.
 
-The system can monitor registered devices connected to the IoT system.
+## 📈 Transactional History & Ownership Mapping
+Stores and processes client transaction records to create explicit product ownership maps, indexing critical data such as:
+* Complete Customer Profiles.
+* Hardware Serial Numbers & Product SKUs.
+* Purchase Timestamps & Dynamic Warranty Expiration Dates.
+This feature expedites buyer verification before executing technical repair requests.
 
-Features include:
+## 🛠️ Service Logs & Warranty Lifecycle Tracker
+An asset-tracking subsystem to manage devices routing through repair centers, cataloging technical reports such as:
+* Granular hardware fault and damage diagnoses.
+* Technical servicing and component replacement logs written by technicians.
+* Warranty validation status checking (Determining complimentary vs. paid repairs).
+* Real-time repair pipeline tracking (*Pending / On Progress / Completed*).
+* Medical-grade service log histories maintained per hardware serial number.
 
-* View registered device data
-* Monitor device activity status
-* Detect active/inactive device conditions
-* Automatically update device status based on incoming system data
-
-Currently, device information is automatically received from the IoT integration process.
-
-## Sales History Management
-
-The admin panel stores customer purchase data, including:
-
-* Customer name
-* Device name
-* Purchase history
-* Warranty expiration date
-
-This feature helps administrators track product ownership and warranty validity.
-
-## Warranty & Service Notes
-
-Administrators can manage device repair and warranty records, including:
-
-* Damage reports
-* Repair notes
-* Warranty status
-* Repair completion status
-* Service history tracking
-
-This feature is used to monitor whether a product is still under warranty and whether the repair process has been completed.
-
-## Admin Authentication
-
-The system includes a login feature with CAPTCHA support to improve admin login validation.
+## 🔒 Admin Authentication & Security Hardening
+Secures administrative access against automated dictionary attacks and brute-force bots by embedding mandatory **CAPTCHA** validation checks onto the login portal.
 
 ---
 
 # Technologies Used
 
-* Laravel
-* MySQL
-* JavaScript
-* CSS
+* **Backend Framework:** Laravel (PHP)
+* **Database Engine:** MySQL
+* **Scripting Languages:** JavaScript, HTML5 & CSS3
 
 ---
 
-# Project Status
+# Project Development Status
 
-This project is currently under development.
+The system is currently undergoing active deployment and continuous development (*Active Development*).
 
-Current progress:
-
-* IoT integration has been implemented
-* Device monitoring system is working
-* Admin management features are functional
-* Mobile application integration is still in progress
+Current Engineering Milestones:
+* Full data integration with physical IoT hardware modules is operational.
+* Real-time device telemetry and activity tracking panels are stable.
+* Internal admin management (Sales mapping, service tracking, and warranty checking) is functional.
+* Data-bridge integration linking the web admin panel with the companion mobile app is actively in progress.
 
 ---
 
-# Team Contribution
+# Engineering Team Contribution
 
-* Liana Syifa Fauzia — Web admin panel development, backend logic, dashboard features, and system integration
-* Nadiya Yohana Putri — Landing page development, CAPTCHA implementation, and testing support
-* Hani Ayu Fadila — Admin panel testing and landing page support
+* **Liana Syifa Fauzia:** Lead Web Admin Developer & Systems Integrator (Architected core backend routes, mapped relational schemas, engineered panel feature sets, and developed the web-to-hardware IoT communication bridge).
+* **Nadiya Yohana Putri:** Public Landing Page Developer, led automated CAPTCHA security hardening, and acted as a functional system tester.
+* **Hani Ayu Fadila:** Admin Panel Quality Control (QC) Tester & landing page asset designer.
 
 ---
 
 # Screenshots
 
-## Login Page
-
+## Secured Admin Login Gateway (with CAPTCHA)
 ![Login Page](screenshots/login-page.png)
 
-## Admin Dashboard
-
+## Central IoT Telemetry & Device Monitoring Console
 ![Admin Dashboard](screenshots/admin-dashboard.png)
 
-## Landing Page
-
+## Public Product Showroom (Landing Page)
 ![Landing Page](screenshots/landing-page.png)
 
 ---
 
 # Key Highlights
 
-* Laravel-based admin dashboard
-* IoT device monitoring integration
-* Warranty tracking management
-* Device activity status monitoring
-* Sales history management
-* Multi-team collaborative project
-* Real-time system integration concept
-
-
+* Modular Laravel admin architecture written following industry *Clean Code* conventions.
+* Successful technical implementation of centralized IoT hardware monitoring.
+* End-to-end management pipeline for hardware asset servicing (*Service Logs*).
+* Instant computation and display of physical unit connectivity states.
+* Managed within a highly structured, medium-scale collaborative team environment.
+* Strongly embraces the architectural philosophy of *Real-time System Integration*.
